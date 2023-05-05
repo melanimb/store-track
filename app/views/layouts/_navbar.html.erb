@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-light rounded-custom mt-4 shadow-sm">
+  <div class="container">
+    <%= link_to root_path, class: 'navbar-brand ms-3' do %>
+      <img src=<%= asset_path 'store.png' %> alt="Logo" width="40" height="40" class="me-2">
+      StoreTrack
+    <% end %>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= active_link_to root_path, class: 'nav-link btn btn-outline-secondary px-3 me-2 text-dark', active: [['application'], ['index']] do %>
+            <%= bootstrap_icon 'speedometer', class: 'mb-1' %>
+            <span>Dashboard</span>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= active_link_to clients_path, class: 'nav-link btn btn-outline-secondary px-3 me-2 text-dark' do %>
+            <%= bootstrap_icon 'people-fill', class: 'mb-1' %>
+            <span>Clients</span>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= active_link_to products_path, class: 'nav-link btn btn-outline-secondary px-3 me-2 text-dark' do %>
+            <%= bootstrap_icon 'boxes', class: 'mb-1' %>
+            <span>Products</span>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= active_link_to sales_path, class: 'nav-link btn btn-outline-secondary px-3 me-2 text-dark' do %>
+            <%= bootstrap_icon 'receipt', class: 'mb-1' %>
+            <span>Sales</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <%# USER MENU %>
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= bootstrap_icon 'person-circle', width: 23, height: 23 %>
+        <strong class="ms-1 d-none d-sm-inline">
+          <%= current_user.name %>
+        </strong>
+      </button>
+      <ul class="dropdown-menu dropdown-user-exit">
+        <li>
+          <%= button_to destroy_user_session_path, method: :delete, data: { turbo: false }, class: 'dropdown-item text-danger' do %>
+            <%= bootstrap_icon 'arrow-bar-right', class: 'mb-1' %>
+            <span>Logout</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

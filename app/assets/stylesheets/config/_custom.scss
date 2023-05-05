@@ -1,0 +1,40 @@
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body.background-gray {
+  background-color: $gray-200;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.card {
+  border: none !important;
+}
+
+.card-footer {
+  border: none !important;
+}
+
+.card-header {
+  border: none !important;
+}
+
+.btn {
+  border-radius: 0.6rem !important;
+}
+
+.btn-secondary.active {
+  background-color: $custom-gray !important;
+}
+
+.rounded-custom {
+  border-radius: 0.6rem;
+}
+
+@include media-breakpoint-only(xs) {
+  .dropdown-user-exit {
+    right: 0px !important;
+    left: -100px !important;
+  }
+}

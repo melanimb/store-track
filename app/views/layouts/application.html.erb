@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StoreTrack</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="icon" type="image/png" href="<%= asset_path 'store.png' %>">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="background-gray">
+    <div class="container">
+      <header>
+        <%= render 'layouts/navbar' %>
+      </header>
+      <main>
+        <div class="container bg-light my-3 p-3 rounded-custom shadow-sm">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

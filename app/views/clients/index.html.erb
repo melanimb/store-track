@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= link_to new_client_path, class: 'btn btn-primary' do %>
+  <%= bootstrap_icon('plus-circle-fill', class: "mb-1") %>
+  <span>New client</span>
+<% end %>
+
+
+
+<%= render @clients %>
+
+<%= link_to "New client", new_client_path %>
