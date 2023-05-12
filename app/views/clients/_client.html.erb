@@ -1,4 +1,4 @@
-<a href="" id="<%= dom_id client %>" class="d-flex gap-4 btn btn-outline-secondary text-dark shadow-sm p-3 mb-3 rounded-custom">
+<%= link_to client_path(client), class: 'd-flex gap-4 btn btn-outline-secondary text-dark shadow-sm p-3 mb-3 rounded-custom' do %>
   <span class="my-auto">
     <strong>Name:</strong>
     <%= client.name %>
@@ -28,4 +28,4 @@
     <strong>Store:</strong>
     <%= client.store_id %>
   </span>
-</a>
+<% end %>

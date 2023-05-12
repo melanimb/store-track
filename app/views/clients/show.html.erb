@@ -1,10 +1,54 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @client %>
+<div class="row">
+  <div class="col">
+    <%= link_to clients_path do %>
+      <%= bootstrap_icon('caret-left-fill', class: "mb-2") %>
+      <span class="fs-5">Clients</span>
+    <% end %>
+  </div>
 
-<div>
-  <%= link_to "Edit this client", edit_client_path(@client) %> |
-  <%= link_to "Back to clients", clients_path %>
+  <div class="col d-flex justify-content-end gap-3">
+    <%= link_to edit_client_path(@client), class: 'btn btn-secondary ps-3 pe-4' do %>
+        <%= bootstrap_icon('pencil-fill', class: "mb-1 me-1") %>
+        <span>Edit</span>
+    <% end %>
+    <%= button_to @client, method: :delete, class: 'btn btn-primary' do %>
+      <%= bootstrap_icon('trash3-fill', class: "mb-1 me-1") %>
+      <span>Delete</span>
+    <% end %>
+  </div>
+</div>
 
-  <%= button_to "Destroy this client", @client, method: :delete %>
+<div class="card my-3">
+  <div class="card-body d-flex gap-4">
+    <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="photo_client">
+    <h5 class="card-title mt-2">
+      <strong><%= @client.name %> <%= @client.surname %></strong>
+    </h5>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body d-flex flex-column gap-4">
+    <span class="">
+      <strong>Address:</strong>
+      <%= @client.address %>
+    </span>
+
+    <span class="">
+      <strong>Email:</strong>
+      <%= @client.email %>
+    </span>
+
+    <span class="">
+      <strong>Phone:</strong>
+      <%= @client.phone %>
+    </span>
+
+    <span class="">
+      <strong>Store:</strong>
+      <%= @client.store_id %>
+    </span>
+  </div>
 </div>
