@@ -9,13 +9,13 @@
   </div>
 
   <div class="col d-flex justify-content-end gap-3">
-    <%= link_to edit_client_path(@client), class: 'btn btn-secondary ps-3 pe-4' do %>
-        <%= bootstrap_icon('pencil-fill', class: "mb-1 me-1") %>
-        <span>Edit</span>
+    <%= link_to edit_client_path(@client), class: 'btn btn-secondary' do %>
+        <%= bootstrap_icon('pencil-fill', class: "mb-1") %>
+        <span class="d-none d-md-inline">Edit</span>
     <% end %>
     <%= button_to @client, method: :delete, class: 'btn btn-primary' do %>
-      <%= bootstrap_icon('trash3-fill', class: "mb-1 me-1") %>
-      <span>Delete</span>
+      <%= bootstrap_icon('trash3-fill', class: "mb-1") %>
+      <span class="d-none d-md-inline">Delete</span>
     <% end %>
   </div>
 </div>
