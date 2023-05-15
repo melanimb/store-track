@@ -1,29 +1,29 @@
-<nav class="navbar fixed-bottom bg-light shadow-sm d-lg-none">
+<nav class="navbar fixed-bottom pb-4 bg-light d-lg-none">
   <div class="container">
-    <ul class="nav justify-content-center m-auto">
+    <ul class="nav gap-3 m-auto">
       <li>
-        <%= active_link_to root_path, class: 'nav-link btn btn-outline-secondary px-4 me-2 text-dark', active: [['application'], ['index']] do %>
+        <%= active_link_to root_path, class: 'nav-link btn btn-outline-secondary px-4 text-dark', active: [['application'], ['index']] do %>
           <span>
             <%= bootstrap_icon 'speedometer', class: 'mb-1' %>
           </span>
         <% end %>
       </li>
       <li>
-        <%= active_link_to clients_path, class: 'nav-link btn btn-outline-secondary px-4 me-2 text-dark' do %>
+        <%= active_link_to clients_path, class: 'nav-link btn btn-outline-secondary px-4 text-dark' do %>
           <span>
             <%= bootstrap_icon 'people-fill', class: 'mb-1' %>
           </span>
         <% end %>
       </li>
       <li>
-        <%= active_link_to products_path, class: 'nav-link btn btn-outline-secondary px-4 me-2 text-dark' do %>
+        <%= active_link_to products_path, class: 'nav-link btn btn-outline-secondary px-4 text-dark' do %>
           <span>
             <%= bootstrap_icon 'boxes', class: 'mb-1' %>
           </span>
         <% end %>
       </li>
       <li>
-        <%= active_link_to sales_path, class: 'nav-link btn btn-outline-secondary px-4 me-2 text-dark' do %>
+        <%= active_link_to sales_path, class: 'nav-link btn btn-outline-secondary px-4 text-dark' do %>
           <span>
             <%= bootstrap_icon 'receipt', class: 'mb-1' %>
           </span>
