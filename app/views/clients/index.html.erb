@@ -1,15 +1,15 @@
 <section class="row">
-  <div class="col">
+  <div class="col-12 col-sm-3">
     <h5 class="mt-2">Total: <%= @clients.count %> </h5>
   </div>
-  <div class="col d-flex justify-content-end gap-3">
-    <form class="d-flex" role="search">
+  <div class="col-12 col-sm-9 d-flex justify-content-end gap-3">
+    <form class="d-flex clients_form" role="search">
         <input class="form-control me-1" type="search" placeholder="Search clients" aria-label="Search">
         <button class="btn btn-outline-secondary border-info text-dark" type="submit"><%= bootstrap_icon('search', class: "mb-1") %></button>
     </form>
     <%= link_to new_client_path, class: 'btn btn-primary' do %>
       <%= bootstrap_icon('plus-circle-fill', class: "mb-1") %>
-      <span>New client</span>
+      <span class="d-none d-md-inline">New client</span>
     <% end %>
   </div>
 </section>

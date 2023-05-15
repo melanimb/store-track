@@ -21,34 +21,29 @@
 </div>
 
 <div class="card my-3">
-  <div class="card-body d-flex gap-4">
+  <div class="card-body d-flex gap-3">
     <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="photo_client">
     <h5 class="card-title mt-2">
-      <strong><%= @client.name %> <%= @client.surname %></strong>
+      <strong><%= @client.full_name %></strong>
     </h5>
   </div>
 </div>
 
 <div class="card">
   <div class="card-body d-flex flex-column gap-4">
-    <span class="">
+    <span>
       <strong>Address:</strong>
       <%= @client.address %>
     </span>
 
-    <span class="">
+    <span>
       <strong>Email:</strong>
       <%= @client.email %>
     </span>
 
-    <span class="">
+    <span>
       <strong>Phone:</strong>
       <%= @client.phone %>
-    </span>
-
-    <span class="">
-      <strong>Store:</strong>
-      <%= @client.store_id %>
     </span>
   </div>
 </div>
