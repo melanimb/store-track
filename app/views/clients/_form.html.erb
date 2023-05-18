@@ -1,4 +1,42 @@
 <%= form_with(model: client) do |form| %>
+  <div class="card my-3">
+    <div class="card-body d-flex gap-3">
+      <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="photo_client">
+        <div>
+          <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+        </div>
+
+        <div>
+          <%= form.text_field :surname, class: "form-control", placeholder: "Surname" %>
+        </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body d-flex flex-column gap-4">
+      <div>
+        <%= form.text_field :address, class: "form-control", placeholder: "Address" %>
+      </div>
+
+      <div>
+        <%= form.text_field :email, class: "form-control", placeholder: "Email" %>
+      </div>
+
+      <div>
+        <%= form.text_field :phone, class: "form-control", placeholder: "Phone" %>
+      </div>
+
+      <div>
+        <%= form.text_field :store_id, class: "form-control", placeholder: "Store" %>
+      </div>
+
+      <div class="btn-toolbar gap-2 align-self-end">
+        <%= link_to 'Cancel', clients_path, class: "btn btn-secondary" %>
+        <%= form.submit "Save" , class: "btn btn-primary px-3" %>
+      </div>
+    </div>
+  </div>
+
   <% if client.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
@@ -10,38 +48,4 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :surname, style: "display: block" %>
-    <%= form.text_field :surname %>
-  </div>
-
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label :store_id, style: "display: block" %>
-    <%= form.text_field :store_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
