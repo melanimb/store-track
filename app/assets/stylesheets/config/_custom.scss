@@ -36,6 +36,10 @@ a {
   border-radius: 0.6rem;
 }
 
+.inputs-container {
+  max-width: 32rem;
+}
+
 @include media-breakpoint-only(xs) {
   .dropdown-user-exit {
     right: 0px !important;

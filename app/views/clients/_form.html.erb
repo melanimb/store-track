@@ -1,7 +1,7 @@
 <%= form_with(model: client) do |form| %>
   <div class="card my-3">
-    <div class="card-body d-flex gap-3">
-      <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="photo_client">
+    <div class="card-body d-flex flex-column flex-sm-row gap-3">
+        <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="photo_client" class="d-none d-sm-inline">
         <div>
           <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
         </div>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="card">
-    <div class="card-body d-flex flex-column gap-4">
+    <div class="card-body d-flex flex-column gap-4 inputs-container">
       <div>
         <%= form.text_field :address, class: "form-control", placeholder: "Address" %>
       </div>
@@ -30,7 +30,7 @@
         <%= form.text_field :store_id, class: "form-control", placeholder: "Store" %>
       </div>
 
-      <div class="btn-toolbar gap-2 align-self-end">
+      <div class="btn-toolbar gap-2 justify-content-end justify-content-md-start">
         <%= link_to 'Cancel', clients_path, class: "btn btn-secondary" %>
         <%= form.submit "Save" , class: "btn btn-primary px-3" %>
       </div>
