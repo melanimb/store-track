@@ -1,16 +1,16 @@
 <%= link_to client_path(client), class: 'card d-flex flex-row btn btn-outline-secondary text-dark shadow-sm p-3 mb-3 rounded-custom' do %>
   <span class="text-start col col-xl-3">
     <strong>Name:</strong>
-    <span><%= client.full_name %></span>
+    <%= client.full_name %>
   </span>
 
   <span class="text-start d-none d-md-inline col col-sm-7 col-xl-5">
     <strong>Email:</strong>
-    <span><%= client.email %></span>
+    <%= client.email %>
   </span>
 
   <span class="text-start d-none d-xl-inline col col-xl-4">
     <strong>Phone:</strong>
-    <span><%= client.phone %></span>
+    <%= client.phone %>
   </span>
 <% end %>
