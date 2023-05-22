@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_01_082313) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_22_094332) do
   create_table "clients", force: :cascade do |t|
     t.string "name", limit: 255
     t.string "surname", limit: 255
@@ -23,7 +23,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_01_082313) do
     t.index ["store_id"], name: "index_clients_on_store_id"
   end
 
+  create_table "expenses", force: :cascade do |t|
+    t.date "date"
+    t.string "description"
+    t.integer "type"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
+    t.string "code"
     t.string "name", limit: 255
     t.text "description"
     t.decimal "price", precision: 10, scale: 2

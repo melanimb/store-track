@@ -1,5 +1,10 @@
-<%= link_to product_path(product), class: 'card btn btn-outline-secondary text-dark shadow-sm p-3 mb-3 rounded-custom' do %>
+<%= link_to product_path(product), class: 'col card btn btn-outline-secondary text-dark shadow-sm p-3 rounded-custom' do %>
   <div class="card-body text-start" id="<%= dom_id product %>">
+    <p>
+      <strong>Code:</strong>
+      <%= product.code %>
+    </p>
+
     <p>
       <strong>Name:</strong>
       <%= product.name %>
@@ -19,11 +24,5 @@
       <strong>Quantity:</strong>
       <%= product.quantity %>
     </p>
-
-    <p>
-      <strong>Store:</strong>
-      <%= product.store_id %>
-    </p>
-
   </div>
 <% end %>
