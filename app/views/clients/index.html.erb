@@ -13,8 +13,10 @@
     <% end %>
   </div>
 </section>
-<section class="row">
-  <div class="col mt-3">
-    <%= render @clients %>
-  </div>
+<section class="row mt-3">
+  <strong class="col col-xl-3 mb-2">Name</strong>
+  <strong class="d-none d-md-inline col col-sm-7 col-xl-5 mb-2">Email</strong>
+  <strong class="d-none d-xl-inline col col-xl-4 mb-2">Phone</strong>
+  <%= render @clients %>
 </section>
+
