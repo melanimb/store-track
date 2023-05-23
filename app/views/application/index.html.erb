@@ -1,5 +1,4 @@
-<%#= current_store.inspect %>
-<section class="row gap-4">
+<%# <section class="row gap-4">
   <article class="col">
     <div class="card p-3 shadow-sm"><canvas class="m-auto" id="clients" width="350"></canvas></div>
   </article>
@@ -11,6 +10,10 @@
   </article>
 </section>
 
-<script type="module" src="application.js"></script>
-<%#= current_user.inspect %>
+<script type="module" src="application.js"></script> %>
 
+<canvas
+  data-controller="chart"
+  data-chart-data-value="<%= @chart_data.to_json %>"
+  data-chart-options-value="<%= @chart_options.to_json %>"
+></canvas>
