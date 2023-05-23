@@ -1,7 +1,11 @@
 @import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-body.background-gray {
+.custom-background {
   background-color: $gray-200;
+  background-image: url("/assets/wave.svg"), url("/assets/wave2.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom, top;
 }
 
 a {
