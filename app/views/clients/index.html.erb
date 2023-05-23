@@ -1,9 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
 <section class="row">
   <div class="col-12 col-sm-3">
     <h5 class="mt-2">Total: <%= @clients.count %> </h5>
   </div>
   <div class="col-12 col-sm-9 d-flex justify-content-end gap-3">
-    <form class="d-flex clients-form" role="search">
+    <form class="d-flex search-form" role="search">
         <input class="form-control me-1" type="search" placeholder="Search clients" aria-label="Search">
         <button class="btn btn-outline-secondary border-info text-dark" type="submit"><%= bootstrap_icon('search', class: "mb-1") %></button>
     </form>
@@ -13,7 +15,8 @@
     <% end %>
   </div>
 </section>
-<section class="row mt-3">
+
+<section class="row mt-4 mx-1">
   <strong class="col col-xl-3 mb-2">Name</strong>
   <strong class="d-none d-md-inline col col-sm-7 col-xl-5 mb-2">Email</strong>
   <strong class="d-none d-xl-inline col col-xl-4 mb-2">Phone</strong>
