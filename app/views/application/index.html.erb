@@ -1,16 +1,33 @@
-<%#= current_store.inspect %>
 <section class="row gap-4">
   <article class="col">
-    <div class="card p-3 shadow-sm"><canvas class="m-auto" id="clients" width="350"></canvas></div>
+    <div class="card p-3 shadow-sm">
+      <canvas
+        data-controller="chart"
+        data-chart-data-value="<%= @chart_sales_data.to_json %>"
+        data-chart-options-value="<%= @chart_sales_options.to_json %>"
+        data-chart-type-value="bar"
+      ></canvas>
+    </div>
   </article>
+
   <article class="col">
-    <div class="card p-3 shadow-sm"><canvas class="m-auto" id="products" width="350"></canvas></div>
+    <div class="card p-3 shadow-sm">
+      <canvas
+        data-controller="chart"
+        data-chart-data-value="<%= @chart_products_data.to_json %>"
+        data-chart-options-value="<%= @chart_products_options.to_json %>"
+        data-chart-type-value="doughnut"
+      ></canvas>
+    </div>
   </article>
+
   <article class="col">
-    <div class="card p-3 shadow-sm"><canvas class="m-auto" id="sales" width="350"></canvas></div>
+    <div class="card p-3 shadow-sm">
+      <canvas
+        data-controller="chart"
+        data-chart-data-value="<%= @chart_clients_data.to_json %>"
+        data-chart-options-value="<%= @chart_clients_options.to_json %>"
+      ></canvas>
+    </div>
   </article>
 </section>
-
-<script type="module" src="application.js"></script>
-<%#= current_user.inspect %>
-
