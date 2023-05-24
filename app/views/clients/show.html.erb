@@ -39,14 +39,14 @@
     <% end %>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <%= bootstrap_icon('trash3-fill', class: "mb-1") %>
-      Delete
+      <span class="d-none d-md-inline">Delete</span>
     </button>
   </div>
 </div>
 
 <div class="card my-3">
   <div class="card-body d-flex gap-3">
-    <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="photo_client">
+    <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="client_photo" class="d-none d-sm-inline">
     <h5 class="card-title mt-2">
       <strong><%= @client.full_name %></strong>
     </h5>
