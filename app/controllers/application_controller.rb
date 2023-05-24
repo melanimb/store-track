@@ -6,24 +6,47 @@ class ApplicationController < ActionController::Base
     @sales = Sale.all
     @products = Product.all
 
-    @chart_data = {
-      labels: %w[January February March April May June July],
+    @chart_clients_data = {
+      labels: chart_months,
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'transparent',
-        borderColor: '#3B82F6',
-        data: [37, 83, 78, 54, 12, 5, 99]
+        label: 'Clients',
+        data: [37, 83, 78, 54, 12, 30, 64]
       }]
     }
 
-    @chart_options = {
+    @chart_clients_options = {
       scales: {
         yAxes: [{
           ticks: {
             beginAtZero: true
           }
         }]
-      }
+      },
+      aspectRatio: 1,
+    }
+
+    @chart_products_data = {
+      labels: chart_months,
+      datasets: [{
+        label: 'Products',
+        data: [37, 83, 78, 54, 12, 30, 64]
+      }]
+    }
+
+    @chart_products_options = {
+      aspectRatio: 1,
+    }
+
+    @chart_sales_data = {
+      labels: chart_months,
+      datasets: [{
+        label: 'Sales',
+        data: [37, 83, 78, 54, 12, 30, 64]
+      }]
+    }
+
+    @chart_sales_options = {
+      aspectRatio: 1,
     }
   end
 
@@ -33,4 +56,8 @@ class ApplicationController < ActionController::Base
     @current_store ||= current_user.store if user_signed_in?
   end
   helper_method :current_store
+
+  def chart_months
+    %w[January February March April May June July]
+  end
 end
