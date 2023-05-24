@@ -2,6 +2,8 @@
   <article class="col">
     <div class="card p-3 shadow-sm">
       <canvas
+        class="m-auto"
+        width="350"
         data-controller="chart"
         data-chart-data-value="<%= @chart_sales_data.to_json %>"
         data-chart-options-value="<%= @chart_sales_options.to_json %>"
@@ -13,6 +15,8 @@
   <article class="col">
     <div class="card p-3 shadow-sm">
       <canvas
+        class="m-auto"
+        width="350"
         data-controller="chart"
         data-chart-data-value="<%= @chart_products_data.to_json %>"
         data-chart-options-value="<%= @chart_products_options.to_json %>"
@@ -24,6 +28,8 @@
   <article class="col">
     <div class="card p-3 shadow-sm">
       <canvas
+        class="m-auto"
+        width="350"
         data-controller="chart"
         data-chart-data-value="<%= @chart_clients_data.to_json %>"
         data-chart-options-value="<%= @chart_clients_options.to_json %>"
