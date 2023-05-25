@@ -1,3 +1,7 @@
+Client.destroy_all
+Product.destroy_all
+Sale.destroy_all
+
 20.times do
   Client.create(
     name: Faker::Name.name,
@@ -6,9 +10,7 @@
     phone: Faker::PhoneNumber.cell_phone,
     store_id: 1
   )
-end
 
-20.times do
   Product.create(
     code: Faker::Barcode.ean,
     name: Faker::Commerce.product_name,
@@ -17,14 +19,11 @@ end
     quantity: Faker::Number.between(from: 1, to: 100),
     store_id: 1
   )
-end
 
-20.times do
   Sale.create(
-    product: Faker::Commerce.product_name,
     discount: Faker::Number.between(from: 1, to: 100),
     selling_price: Faker::Commerce.price(range: 0..10.0, as_string: true),
-    client: Faker::Name.name,
-    store_id: 1
+    product: Product.last,
+    client: Client.last
   )
 end

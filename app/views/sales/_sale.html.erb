@@ -1,18 +1,18 @@
 <%= link_to sale_path(sale), class: 'card d-flex flex-row btn btn-outline-secondary text-dark shadow-sm p-3 mb-3 rounded-custom' do %>
   <span class="text-start col-9 col-md-5 col-lg-3 mb-2">
-    <%= sale.product_id %>
+    <%= sale.product.name %>
   </span>
 
-  <span class="text-start d-none d-md-inline col col-md-2">
-    <%= sale.discount %>'%'
+  <span class="text-start d-none d-md-inline col col-md-2 ps-1">
+    <%= sale.discount %>%
   </span>
 
-  <span class="text-start col-3 col-md-2">
+  <span class="text-start col-3 col-md-2 ps-2">
     <%= sale.selling_price %>
   </span>
 
-  <span class="text-start d-none d-lg-inline col col-lg-3">
-    <%= sale.client_id %>
+  <span class="text-start d-none d-lg-inline col col-lg-3 ps-2">
+    <%= sale.client.name %>
   </span>
 
   <span class="text-start d-md-inline col col-md-3 col-lg-2">
