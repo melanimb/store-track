@@ -1,7 +1,8 @@
-<%= render "form", product: @product %>
-
-<br>
-
 <div>
-  <%= link_to "Back to products", products_path %>
+  <%= link_to products_path do %>
+    <%= bootstrap_icon('caret-left-fill', class: "mb-2") %>
+    <span class="fs-5">Products</span>
+  <% end %>
 </div>
+
+<%= render "form", product: @product %>
