@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Sales</h1>
+<section class="row">
+  <div class="col-12 col-sm-3">
+    <h5 class="mt-2">Total: <%= @sales.count %> </h5>
+  </div>
+  <div class="col-12 col-sm-9 d-flex justify-content-end gap-3">
+    <%= link_to new_sale_path, class: 'btn btn-primary' do %>
+      <%= bootstrap_icon('plus-circle-fill', class: "mb-1") %>
+      <span class="d-none d-md-inline">Add sale</span>
+    <% end %>
+  </div>
+</section>
 
-<div id="sales">
-  <% @sales.each do |sale| %>
-    <%= render sale %>
-    <p>
-      <%= link_to "Show this sale", sale %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New sale", new_sale_path %>
+<section class="row mt-4 mx-1">
+  <strong class="col-9 col-md-5 col-lg-3 mb-2">Product</strong>
+  <strong class="d-none d-md-inline col col-md-2">Discount</strong>
+  <strong class="col-3 col-md-2">Amount</strong>
+  <strong class="d-none d-lg-inline col col-lg-3">Client</strong>
+  <strong class="d-none d-md-inline col col-md-3 col-lg-2">Date</strong>
+  <%= render @sales %>
+</section>

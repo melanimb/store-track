@@ -18,3 +18,13 @@ end
     store_id: 1
   )
 end
+
+20.times do
+  Sale.create(
+    product: Faker::Commerce.product_name,
+    discount: Faker::Number.between(from: 1, to: 100),
+    selling_price: Faker::Commerce.price(range: 0..10.0, as_string: true),
+    client: Faker::Name.name,
+    store_id: 1
+  )
+end
