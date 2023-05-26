@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_094332) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_26_095242) do
   create_table "clients", force: :cascade do |t|
     t.string "name", limit: 255
     t.string "surname", limit: 255
@@ -33,7 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_094332) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "code"
     t.string "name", limit: 255
     t.text "description"
     t.decimal "price", precision: 10, scale: 2
@@ -41,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_094332) do
     t.integer "store_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "code"
     t.index ["store_id"], name: "index_products_on_store_id"
   end
 
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_094332) do
     t.integer "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
     t.index ["client_id"], name: "index_sales_on_client_id"
     t.index ["product_id"], name: "index_sales_on_product_id"
   end

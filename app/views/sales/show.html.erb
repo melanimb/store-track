@@ -1,10 +1,78 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @sale %>
-
-<div>
-  <%= link_to "Edit this sale", edit_sale_path(@sale) %> |
-  <%= link_to "Back to sales", sales_path %>
-
-  <%= button_to "Destroy this sale", @sale, method: :delete %>
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure you want to delete this sale?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <%= button_to @sale, method: :delete, class: 'btn btn-primary' do %>
+          <span class="d-none d-md-inline">Confirm</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="row">
+  <div class="col">
+    <%= link_to sales_path do %>
+      <%= bootstrap_icon('caret-left-fill', class: "mb-2") %>
+      <span class="fs-5">Sales</span>
+    <% end %>
+  </div>
+
+  <div class="col d-flex justify-content-end gap-3">
+    <%= link_to edit_sale_path(@sale), class: 'btn btn-secondary' do %>
+        <%= bootstrap_icon('pencil-fill', class: "mb-1") %>
+        <span class="d-none d-md-inline">Edit</span>
+    <% end %>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <%= bootstrap_icon('trash3-fill', class: "mb-1") %>
+      <span class="d-none d-md-inline">Delete</span>
+    </button>
+  </div>
+</div>
+
+<div class="card my-3 p-2">
+  <div class="row g-0 align-items-center">
+    <div class="col-md-4 col-lg-2 text-center pb-3">
+      <img src=<%= asset_path 'sale.png' %> alt="cash_machine_photo" class="d-none d-md-inline img-fluid rounded-start" width="140">
+    </div>
+    <div class="col-12 col-md-8 col-lg-10">
+      <div class="card-body">
+        <h5 class="card-title mb-3">
+          <strong><%= @sale.product.name %></strong>
+        </h5>
+        <p>
+          <strong>Client:</strong>
+          <%= @sale.client.name %>
+        </p>
+
+        <p>
+          <strong>Quantity:</strong>
+          <%= @sale.quantity %>
+        </p>
+
+        <p>
+          <strong>Discount:</strong>
+          <%= @sale.discount %>%
+        </p>
+
+        <p>
+          <strong>Amount:</strong>
+          <%= @sale.selling_price %>$
+        </p>
+
+        <p>
+          <strong>Date:</strong>
+          <%= @sale.created_at.strftime("%d-%m-%Y") %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+

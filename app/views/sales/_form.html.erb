@@ -1,4 +1,41 @@
 <%= form_with(model: sale) do |form| %>
+  <div class="card my-3 p-2">
+    <div class="row g-0 align-items-center">
+      <div class="col-12 col-lg-6">
+        <div class="card-body inputs-container d-flex flex-column gap-4">
+          <div>
+            <%= form.text_field :product_id, class: "form-control", placeholder: "Product" %>
+          </div>
+
+          <div>
+            <%= form.text_field :client_id, class: "form-control", placeholder: "Client" %>
+          </div>
+
+          <div>
+            <%= form.text_field :discount, class: "form-control", placeholder: "Discount" %>
+          </div>
+
+          <div>
+            <%= form.text_field :selling_price, class: "form-control", placeholder: "Amount" %>
+          </div>
+
+          <div>
+            <%= form.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
+          </div>
+
+          <div class="btn-toolbar gap-2 justify-content-end justify-content-md-start">
+            <%= link_to 'Cancel', products_path, class: "btn btn-secondary" %>
+            <%= form.submit "Save" , class: "btn btn-primary px-3" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src=<%= asset_path 'sale.png' %> alt="cash_machine_photo" class="d-none d-lg-inline img-fluid opacity-25" width="250">
+      </div>
+    </div>
+  </div>
+
   <% if sale.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
@@ -10,28 +47,4 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :selling_price, style: "display: block" %>
-    <%= form.text_field :selling_price %>
-  </div>
-
-  <div>
-    <%= form.label :discount, style: "display: block" %>
-    <%= form.number_field :discount %>
-  </div>
-
-  <div>
-    <%= form.label :product_id, style: "display: block" %>
-    <%= form.text_field :product_id %>
-  </div>
-
-  <div>
-    <%= form.label :client_id, style: "display: block" %>
-    <%= form.text_field :client_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

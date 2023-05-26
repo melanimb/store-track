@@ -21,7 +21,8 @@ Sale.destroy_all
   )
 
   Sale.create(
-    discount: Faker::Number.between(from: 1, to: 100),
+    quantity: Faker::Number.between(from: 1, to: 15),
+    discount: Faker::Number.between(from: 1, to: 50),
     selling_price: Faker::Commerce.price(range: 0..10.0, as_string: true),
     product: Product.last,
     client: Client.last
