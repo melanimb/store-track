@@ -11,22 +11,27 @@
       <div class="col-12 col-lg-6">
         <div class="card-body inputs-container d-flex flex-column gap-4">
           <div>
+            <%= f.label :client %>
             <%= f.text_field :client_name, class: "form-control", value: f.object.client.name, disabled: true %>
           </div>
           <div>
+            <%= f.label :product %>
             <%= f.text_field :product_name, class: "form-control", value: f.object.product.name, disabled: true %>
           </div>
 
           <div>
+            <%= f.label :quantity %>
+            <%= f.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
+          </div>
+
+          <div>
+            <%= f.label :discount %>
             <%= f.text_field :discount, class: "form-control", placeholder: "Discount" %>
           </div>
 
           <div>
+            <%= f.label :amount %>
             <%= f.text_field :selling_price, class: "form-control", placeholder: "Amount" %>
-          </div>
-
-          <div>
-            <%= f.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
           </div>
 
           <div class="btn-toolbar gap-2 justify-content-end justify-content-md-start">

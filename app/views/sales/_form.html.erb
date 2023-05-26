@@ -7,15 +7,15 @@
           <%= form.select :client_id, Client.all.map(&:name), {}, class: 'form-select' %>
 
           <div>
+            <%= form.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
+          </div>
+
+          <div>
             <%= form.text_field :discount, class: "form-control", placeholder: "Discount" %>
           </div>
 
           <div>
             <%= form.text_field :selling_price, class: "form-control", placeholder: "Amount" %>
-          </div>
-
-          <div>
-            <%= form.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
           </div>
 
           <div class="btn-toolbar gap-2 justify-content-end justify-content-md-start">
