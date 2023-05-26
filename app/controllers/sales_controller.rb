@@ -14,6 +14,7 @@ class SalesController < ApplicationController
   def edit; end
 
   def create
+    raise params.inspect
     @sale = Sale.new(sale_params)
 
     if @sale.save

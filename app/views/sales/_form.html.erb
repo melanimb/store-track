@@ -3,13 +3,8 @@
     <div class="row g-0 align-items-center">
       <div class="col-12 col-lg-6">
         <div class="card-body inputs-container d-flex flex-column gap-4">
-          <div>
-            <%= form.text_field :product_id, class: "form-control", placeholder: "Product" %>
-          </div>
-
-          <div>
-            <%= form.text_field :client_id, class: "form-control", placeholder: "Client" %>
-          </div>
+          <%= form.select :product_id, Product.all.map(&:name), {}, class: 'form-select' %>
+          <%= form.select :client_id, Client.all.map(&:name), {}, class: 'form-select' %>
 
           <div>
             <%= form.text_field :discount, class: "form-control", placeholder: "Discount" %>

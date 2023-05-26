@@ -5,4 +5,41 @@
   <% end %>
 </div>
 
-<%= render "form", sale: @sale %>
+<%= form_with(model: @sale) do |f| %>
+  <div class="card my-3 p-2">
+    <div class="row g-0 align-items-center">
+      <div class="col-12 col-lg-6">
+        <div class="card-body inputs-container d-flex flex-column gap-4">
+          <div>
+            <%= f.text_field :client_name, class: "form-control", value: f.object.client.name, disabled: true %>
+          </div>
+          <div>
+            <%= f.text_field :product_name, class: "form-control", value: f.object.product.name, disabled: true %>
+          </div>
+
+          <div>
+            <%= f.text_field :discount, class: "form-control", placeholder: "Discount" %>
+          </div>
+
+          <div>
+            <%= f.text_field :selling_price, class: "form-control", placeholder: "Amount" %>
+          </div>
+
+          <div>
+            <%= f.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
+          </div>
+
+          <div class="btn-toolbar gap-2 justify-content-end justify-content-md-start">
+            <%= link_to 'Cancel', products_path, class: "btn btn-secondary" %>
+            <%= f.submit "Save" , class: "btn btn-primary px-3" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src=<%= asset_path 'sale.png' %> alt="cash_machine_photo" class="d-none d-lg-inline img-fluid opacity-25" width="250">
+      </div>
+    </div>
+  </div>
+<% end %>
+
