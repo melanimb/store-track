@@ -45,6 +45,6 @@ class SalesController < ApplicationController
   end
 
   def sale_params
-    params.require(:sale).permit(:selling_price, :discount, :product_id, :client_id)
+    params.require(:sale).permit(:selling_price, :discount, :product_id, :client_id, :quantity)
   end
 end
