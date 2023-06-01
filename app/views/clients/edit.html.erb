@@ -5,5 +5,54 @@
   <% end %>
 </div>
 
-<%= render "form", client: @client %>
+<%= form_with(model: @client) do |form| %>
+  <div class="card my-3">
+    <div class="card-body d-flex flex-column flex-sm-row gap-3">
+        <img src=<%= asset_path 'user.png' %> width="40" height="40" alt="photo_client" class="d-none d-sm-inline">
+        <div>
+          <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+        </div>
+
+        <div>
+          <%= form.text_field :surname, class: "form-control", placeholder: "Surname" %>
+        </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body d-flex flex-column gap-4 inputs-container">
+      <div>
+        <%= form.label :Address %>
+        <%= form.text_field :address, class: "form-control", placeholder: "Address" %>
+      </div>
+
+      <div>
+        <%= form.label :Email %>
+        <%= form.text_field :email, class: "form-control", placeholder: "Email" %>
+      </div>
+
+      <div>
+        <%= form.label :Phone %>
+        <%= form.text_field :phone, class: "form-control", placeholder: "Phone" %>
+      </div>
+
+      <div class="btn-toolbar gap-2 justify-content-end justify-content-md-start">
+        <%= link_to 'Cancel', clients_path, class: "btn btn-secondary" %>
+        <%= form.submit "Save" , class: "btn btn-primary px-3" %>
+      </div>
+    </div>
+  </div>
+
+  <% if @client.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+      <ul>
+        <% client.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
 

@@ -23,10 +23,6 @@
             <%= form.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
           </div>
 
-          <div>
-            <%= form.text_field :store_id, class: "form-control", placeholder: "Store" %>
-          </div>
-
           <div class="btn-toolbar gap-2 justify-content-end justify-content-md-start">
             <%= link_to 'Cancel', products_path, class: "btn btn-secondary" %>
             <%= form.submit "Save" , class: "btn btn-primary px-3" %>
