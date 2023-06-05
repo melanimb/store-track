@@ -3,8 +3,8 @@
     <div class="row g-0 align-items-center">
       <div class="col-12 col-lg-6">
         <div class="card-body inputs-container d-flex flex-column gap-4">
-          <%= form.select :product_id, Product.all.map(&:name), {}, class: 'form-select' %>
-          <%= form.select :client_id, Client.all.map(&:name), {}, class: 'form-select' %>
+          <%= form.select :product_id, Product.all.map { |product| [product.name, product.id] }, {}, class: 'form-select' %>
+          <%= form.select :client_id, Client.all.map { |client| [client.name, client.id] }, {}, class: 'form-select' %>
 
           <div>
             <%= form.number_field :quantity, class: "form-control", placeholder: "Quantity" %>

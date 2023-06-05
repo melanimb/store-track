@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
     @clients = Client.all
@@ -48,6 +49,12 @@ class ApplicationController < ActionController::Base
     @chart_sales_options = {
       aspectRatio: 1,
     }
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :store_id])
   end
 
   private
