@@ -2,13 +2,30 @@
   <div class="h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+
+        <div class="accordion mb-3" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Default data for login
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>Email: admin@gmail.com</p>
+                <p>Password: 123456</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="card shadow-lg rounded-custom" style="
           background: hsla(0, 0%, 100%, 0.3);
           backdrop-filter: blur(10px);
         ">
-          <div class="card-body p-5 text-center">
+          <div class="card-body p-5">
 
-            <h2 class="mb-5">Sign in</h2>
+            <h2 class="mb-4 text-center">Sign in</h2>
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="form-outline mb-4">
