@@ -33,7 +33,7 @@
 
   <% if sale.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+      <h3><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h3>
 
       <ul>
         <% sale.errors.each do |error| %>

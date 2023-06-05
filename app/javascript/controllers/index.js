@@ -5,5 +5,8 @@
 import { application } from "stimulus"
 import Chart from 'stimulus-chartjs'
 
+import RemovalsController from "./removals_controller"
+application.register("removals", RemovalsController)
+
 const application = Application.start()
 application.register('chart', Chart)

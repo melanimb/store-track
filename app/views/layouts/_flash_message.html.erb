@@ -1,0 +1,10 @@
+<% flash.each do |flash_type, message| %>
+  <div class="flash-message shadow-lg bg-light" data-controller="removals" data-action="animationend->removals#remove">
+    <div class="flash-message-content">
+      <div class="message">
+        <span class="text"><%= message %></span>
+      </div>
+      <div class="progress"></div>
+    </div>
+  </div>
+<% end %>
