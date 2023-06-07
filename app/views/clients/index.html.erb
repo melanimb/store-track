@@ -1,11 +1,11 @@
 <section class="row">
-  <div class="d-flex gap-4 col-12 col-sm-3">
+  <div class="col-12 col-sm-3">
     <h5 class="mt-2">Total: <%= @clients.count %> </h5>
-    <%= link_to 'Show all', clients_path, class: 'btn btn-secondary px-3 me-2 text-dark' %>
   </div>
   <div class="col-12 col-sm-9 d-flex justify-content-end gap-3">
-    <%= form_with(url: clients_path, method: "GET", data: { controller: "form-submission", turbo_frame: "clients", turbo_action: "advance" }, class: 'd-flex search-form') do |form| %>
-      <%= form.text_field :query, data: { action: "input->form-submission#search" }, class: 'form-control me-1', placeholder: 'Search clients' %>
+    <%= link_to 'Show all', clients_path, class: 'btn btn-secondary px-3 me-2 text-dark' %>
+    <%= form_with(url: clients_path, method: "GET", class: 'd-flex search-form') do |form| %>
+      <%= form.text_field :query, class: 'form-control me-1', placeholder: 'Search clients' %>
       <%= form.button name: nil, class: 'btn btn-outline-secondary border-info text-dark' do %>
         <%= bootstrap_icon('search', class: "mb-1") %>
       <% end %>
@@ -21,8 +21,6 @@
   <strong class="col col-xl-3 mb-2">Name</strong>
   <strong class="d-none d-md-inline col col-sm-7 col-xl-5 mb-2">Email</strong>
   <strong class="d-none d-xl-inline col col-xl-4 mb-2">Phone</strong>
-  <%= turbo_frame_tag "clients" do %>
-    <%= render @clients %>
-  <% end %>
+  <%= render @clients %>
 </section>
 

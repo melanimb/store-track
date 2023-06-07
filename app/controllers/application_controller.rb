@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :turbo_frame_request_variant
 
   def index
     @clients = Client.all
@@ -67,9 +66,5 @@ class ApplicationController < ActionController::Base
 
   def chart_months
     %w[January February March April May June July]
-  end
-
-  def turbo_frame_request_variant
-    request.variant = :turbo_frame if turbo_frame_request?
   end
 end

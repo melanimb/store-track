@@ -2,10 +2,11 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
-
-import FormSubmissionController from "./form_submission_controller"
-application.register("form-submission", FormSubmissionController)
+import { application } from "stimulus"
+import Chart from 'stimulus-chartjs'
 
 import RemovalsController from "./removals_controller"
 application.register("removals", RemovalsController)
+
+const application = Application.start()
+application.register('chart', Chart)
