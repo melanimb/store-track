@@ -1,8 +1,14 @@
 class ClientsController < ApplicationController
+  before_action :set_store
   before_action :set_client, only: %i[show edit update destroy]
 
   def index
-    @clients = Client.all
+    @clients = if params[:query].present?
+                 query = "%#{params[:query]}%"
+                 @store.clients.where("name LIKE ? OR surname LIKE ? OR email LIKE ?", query, query, query)
+               else
+                 @store.clients
+               end
   end
 
   def show; end
@@ -41,10 +47,14 @@ class ClientsController < ApplicationController
   private
 
   def set_client
-    @client = Client.find_by(id: params[:id])
+    @client = @store.clients.find_by(id: params[:id])
   end
 
   def client_params
-    params.require(:client).permit(:name, :surname, :address, :email, :phone, :store_id)
+    params.require(:client).permit(:name, :surname, :address, :email, :phone)
+  end
+
+  def set_store
+    @store = current_user.store
   end
 end
