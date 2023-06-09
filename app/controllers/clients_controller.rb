@@ -4,11 +4,11 @@ class ClientsController < ApplicationController
 
   def index
     @clients = if params[:query].present?
-                 query = "%#{params[:query]}%"
-                 @store.clients.where("name LIKE ? OR surname LIKE ? OR email LIKE ?", query, query, query)
-               else
-                 @store.clients
-               end
+                query = "%#{params[:query]}%"
+                @store.clients.where("name LIKE ? OR surname LIKE ? OR email LIKE ?", query, query, query)
+              else
+                @store.clients
+              end
   end
 
   def show; end

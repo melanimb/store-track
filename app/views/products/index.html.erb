@@ -1,12 +1,18 @@
-<section class="row">
-  <div class="col-12 col-sm-3">
+<section class="row gap-3 gap-sm-0">
+  <div class="d-flex gap-4 col-12 col-sm-5 col-md-4">
     <h5 class="mt-2">Total: <%= @products.count %> </h5>
+        <%= link_to products_path, class: 'btn btn-secondary text-dark' do %>
+      <%= bootstrap_icon('card-list', class: "mb-1") %>
+      <span class="d-none d-lg-inline">Show all</span>
+    <% end %>
   </div>
-  <div class="col-12 col-sm-9 d-flex justify-content-end gap-3">
-    <form class="d-flex search-form" role="search">
-        <input class="form-control me-1" type="search" placeholder="Search products" aria-label="Search">
-        <button class="btn btn-outline-secondary border-info text-dark" type="submit"><%= bootstrap_icon('search', class: "mb-1") %></button>
-    </form>
+  <div class="col-12 col-sm-7 col-md-8 d-flex justify-content-end gap-3">
+    <%= form_with(url: products_path, method: "GET", class: 'd-flex search-form') do |form| %>
+      <%= form.text_field :query, class: 'form-control me-1', placeholder: 'Search products' %>
+      <%= form.button name: nil, class: 'btn btn-outline-secondary border-info text-dark' do %>
+        <%= bootstrap_icon('search', class: "mb-1") %>
+      <% end %>
+    <% end %>
     <%= link_to new_product_path, class: 'btn btn-primary' do %>
       <%= bootstrap_icon('plus-circle-fill', class: "mb-1") %>
       <span class="d-none d-md-inline">Add product</span>
