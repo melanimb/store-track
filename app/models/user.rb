@@ -11,7 +11,7 @@ class User < ApplicationRecord
   private
 
   def create_store
-    store = Store.create(name: self.name)
+    store = Store.create(name: 'Personal Store')
     self.store_id = store.id
   end
 end
