@@ -1,4 +1,4 @@
-store_id = User.first.store_id
+User.create(name: "Admin", email: "admin@gmail.com", password: "123456")
 
 20.times do
   Client.create(
@@ -6,7 +6,7 @@ store_id = User.first.store_id
     email: Faker::Internet.email,
     address: Faker::Address.full_address,
     phone: Faker::PhoneNumber.cell_phone,
-    store_id:
+    store_id: 1
   )
 
   Product.create(
@@ -15,7 +15,7 @@ store_id = User.first.store_id
     description: Faker::Commerce.department(max: 5),
     price: Faker::Commerce.price(range: 0..10.0, as_string: true),
     quantity: Faker::Number.between(from: 1, to: 100),
-    store_id:
+    store_id: 1
   )
 
   Sale.create(
