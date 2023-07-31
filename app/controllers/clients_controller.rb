@@ -39,6 +39,7 @@ class ClientsController < ApplicationController
   end
 
   def destroy
+    @client.sales.destroy_all
     @client.destroy
 
     redirect_to clients_url, notice: 'Client was successfully destroyed.'
